@@ -11,22 +11,16 @@ load_dotenv()
 async def main():
     bot = Bot(os.getenv('TOKEN'))
     dp = Dispatcher()
-    
-    # Создаем ЕДИНСТВЕННЫЙ экземпляр планировщика
     scheduler = AsyncIOScheduler()
     scheduler.start()
-    
-    # Передаем зависимости в роутеры
     dp.include_router(main_router)
     dp.include_router(admin_router)
-    dp["bot"] = bot  # Делаем бот доступным в роутерах
-    dp["scheduler"] = scheduler  # И планировщик тоже
-    
+    dp["bot"] = bot  
+    dp["scheduler"] = scheduler  
     try:
         await bot.delete_webhook(drop_pending_updates=True)
         await dp.start_polling(bot)
     finally:
         scheduler.shutdown()
-
 if __name__ == "__main__":
     asyncio.run(main())
