@@ -1,7 +1,7 @@
 from aiogram import types
 from aiogram.filters.callback_data import CallbackData
 from aiogram.utils.keyboard import InlineKeyboardBuilder
-from aiogram.types import CallbackQuery, InlineKeyboardMarkup, InlineKeyboardButton  # Импорт CallbackQuery, InlineKeyboardMarkup и InlineKeyboardButton
+from aiogram.types import CallbackQuery, InlineKeyboardMarkup, InlineKeyboardButton  
 
 class Movements(CallbackData, prefix = ' 1'):
     placement: str
