@@ -15,8 +15,6 @@ from datetime import datetime, timedelta
 from aiogram import Bot
 import os 
 
-media_db = Database()
-
 load_dotenv()
 router = Router()
 db = Database() 
