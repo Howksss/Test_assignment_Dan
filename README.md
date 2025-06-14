@@ -8,7 +8,7 @@
   <li>Aiogram 3.2</li>
   <li>APScheduler 3.11.0</li>
   <li>Pydantic 2.9</li>
-  <li>QLAlchemy 2.0</li>
+  <li>SQLAlchemy 2.0</li>
   </ul>
 </div>
 <div align=center>
